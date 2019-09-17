@@ -28,4 +28,8 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.testClass {
+  border: 1px solid black;
+}
 </style>
