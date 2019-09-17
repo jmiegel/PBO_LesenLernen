@@ -8,11 +8,11 @@ module.exports = {
   extends: ["plugin:vue/recommended", "@vue/prettier"],
 
   rules: {
-    'no-console': 'off',
-    'no-debugger': 'off'
+    "no-console": "off",
+    "no-debugger": "off"
   },
 
   parserOptions: {
-    parser: 'babel-eslint'
-  },
+    parser: "babel-eslint"
+  }
 };
