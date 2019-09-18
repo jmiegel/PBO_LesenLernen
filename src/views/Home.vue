@@ -4,13 +4,20 @@
     <!--<HelloWorld />-->
     <!--<BlogPost />-->
     <h1>Welche Buchstaben kannst du schon?</h1>
-    <button class="Normalbutton">Einstellungen</button>
-    <button class="Piktobutton">
-      <img id="puzzleimg" alt="Puzzle" src="../assets/puzzle.png" />
-    </button>
-    <button class="Piktobutton">
-      <img id="startimg" alt="Start" src="../assets/start.png" />
-    </button>
+    <div id="home_grid">
+      <img
+        id="anlauttabelle"
+        src="../assets/anlauttabelle.jpg"
+        alt="Anlauttabelle"
+      />
+      <button id="button_puzzle" class="Piktobutton">
+        <img id="puzzleimg" alt="Puzzle" src="../assets/puzzle.png" />
+      </button>
+      <button id="btn_einstellungen" class="Normalbutton">Einstellungen</button>
+      <button id="button_start" class="Piktobutton">
+        <img id="startimg" alt="Start" src="../assets/start.png" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -43,8 +50,32 @@ export default {
   padding: 0px;
 }
 
-img {
+/*img {
   height: 50%;
   width: 50%;
+}*/
+
+#home_grid {
+  display: grid;
+}
+
+#anlauttabelle {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+#button_einstellungen {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+#button_puzzle {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+#button_start {
+  grid-row: 2;
+  grid-column: 3;
 }
 </style>
