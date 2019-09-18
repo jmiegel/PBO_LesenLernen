@@ -5,15 +5,18 @@
     <!--<BlogPost />-->
     <h1>Welche Buchstaben kannst du schon?</h1>
     <div id="home_grid">
-      <img
-        id="anlauttabelle"
-        src="../assets/anlauttabelle.jpg"
-        alt="Anlauttabelle"
-      />
+      <!--<img id="anlauttabelle" src="../assets/anlauttabelle.jpg" alt="Anlauttabelle" />-->
+      <div v-for="(entry, i) in piktArray" :key="entry.name">
+        {{ piktArray[i].upper }} - {{ piktArray[i].lower }}
+        <img :src="piktArray[i].img" />
+      </div>
+
       <button id="button_puzzle" class="Piktobutton">
         <img id="puzzleimg" alt="Puzzle" src="../assets/puzzle.png" />
       </button>
+
       <button id="btn_einstellungen" class="Normalbutton">Einstellungen</button>
+
       <button id="button_start" class="Piktobutton">
         <img id="startimg" alt="Start" src="../assets/start.png" />
       </button>
@@ -25,12 +28,18 @@
 // @ is an alias to /src
 //import HelloWorld from "@/components/HelloWorld.vue";
 //import BlogPost from "../components/Blogpost.vue";
+import Piktogrammes from "../piktogrammes/piktogrammes.js";
 
 export default {
   name: "Home",
   components: {
     //HelloWorld,
     //BlogPost
+  },
+  data() {
+    return {
+      piktArray: Piktogrammes
+    };
   }
 };
 </script>
