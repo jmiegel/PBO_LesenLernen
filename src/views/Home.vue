@@ -1,8 +1,9 @@
 <template>
   <div class="home">
     <h1>Welche Buchstaben kannst du schon?</h1>
-
-    <BuchstabenauswahlTabelle />
+    <div id="home_grid">
+      <BuchstabenauswahlTabelle />
+    </div>
 
     <div class="button_wrapper">
       <button id="button_puzzle" class="Piktobutton">
