@@ -4,7 +4,7 @@
     <div id="home_grid">
       <BuchstabenauswahlTabelle />
     </div>
-
+    {{ auswBuchArr }}
     <div class="button_wrapper">
       <button>
         <font-awesome-icon icon="puzzle-piece" size="4x" />
@@ -23,6 +23,7 @@
 
 <script>
 import pictograms from "@/pictograms.js";
+import auswahlBuchstaben from "@/auswahlBuchstaben";
 import BuchstabenauswahlTabelle from "@/components/BuchstabenauswahlTabelle.vue";
 
 export default {
@@ -32,7 +33,8 @@ export default {
   },
   data() {
     return {
-      piktArray: pictograms
+      piktArray: pictograms,
+      auswBuchArr: auswahlBuchstaben
     };
   }
 };
