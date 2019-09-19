@@ -1,11 +1,11 @@
 <template>
   <div class="kaestchen_wrapper">
     <div class="bild_wrapper">
-      <img :src="kaestchen_data.img" />
+      <img :src="kaestchenData.img" />
     </div>
     <div class="info_wrapper">
       <div class="buchstabe_wrapper">
-        {{ kaestchen_data.upper }} {{ kaestchen_data.lower }}
+        {{ kaestchenData.upper }} {{ kaestchenData.lower }}
       </div>
       <div class="checkbox_wrapper">
         <input type="checkbox" />

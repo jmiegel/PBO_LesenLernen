@@ -1,7 +1,7 @@
 <template>
   <div class="tabelle_wrapper">
     <div v-for="entry in pictArray" :key="entry.name">
-      <BuchstabenauswahlKaestchen :kaestchen_data="entry" />
+      <BuchstabenauswahlKaestchen :kaestchen-data="entry" />
     </div>
   </div>
 </template>
