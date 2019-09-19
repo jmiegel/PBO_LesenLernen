@@ -6,14 +6,16 @@
     </div>
 
     <div class="button_wrapper">
-      <button id="button_puzzle" class="Piktobutton">
-        <img id="puzzleimg" alt="Puzzle" src="../assets/puzzle.png" />
+      <button>
+        <font-awesome-icon icon="puzzle-piece" size="4x" />
       </button>
 
-      <button id="btn_einstellungen" class="Normalbutton">Einstellungen</button>
+      <button>
+        <font-awesome-icon icon="user-cog" size="4x" />
+      </button>
 
-      <button id="button_start" class="Piktobutton">
-        <img id="startimg" alt="Start" src="../assets/start.png" />
+      <button>
+        <font-awesome-icon icon="play" size="4x" />
       </button>
     </div>
   </div>
@@ -46,7 +48,6 @@ export default {
 }
 
 .Piktobutton {
-  background-color: blue;
   border-radius: 4px;
   padding: 0px;
 }
