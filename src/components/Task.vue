@@ -33,11 +33,14 @@ export default {
 .task_wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 5em;
 }
 
 .char_wrapper {
   font-size: 10em;
-  padding: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   font-weight: bold;
   transition: color 0.5s ease;
 }

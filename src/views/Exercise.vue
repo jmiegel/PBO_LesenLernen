@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Übung</h1>
     <progress></progress>
     <Task :key="componentKey" />
     <button @click="nextTask">
@@ -30,4 +29,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+progress {
+  border-radius: 4px;
+  width: 60%;
+  height: 50%;
+}
+</style>
