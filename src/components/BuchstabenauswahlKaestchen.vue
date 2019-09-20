@@ -32,11 +32,11 @@ export default {
     };
   },
   watch: {
-    selected: function(newValue) {
-      this.internalSelect = newValue;
-    },
-    mounted() {
-      this.internalSelect = this.selected;
+    selected: {
+      handler: function(newValue) {
+        this.internalSelect = newValue;
+      },
+      immediate: true
     }
   }
 };
