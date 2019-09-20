@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     const auswahlFromStorage = JSON.parse(localStorage.getItem("auswahl"));
-    console.log(auswahlFromStorage);
+
     if (auswahlFromStorage === null) {
       for (let i = 0; i < pictograms.length; i++) {
         this.auswBuchArr.push(false);
