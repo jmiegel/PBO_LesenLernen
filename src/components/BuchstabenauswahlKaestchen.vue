@@ -8,25 +8,36 @@
         {{ kaestchenData.upper }} {{ kaestchenData.lower }}
       </div>
       <div class="checkbox_wrapper">
-        <input v-model="auswahlArray[index]" type="checkbox" />
+        <input
+          v-model="internalSelect"
+          type="checkbox"
+          @input="$emit('input', $event.target.checked, index)"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-//import auswahlBuchstaben from "@/auswahlBuchstaben";
-import auswBuchArr from "@/views/Home.vue";
 export default {
   name: "BuchstabenauswahlKaestchen",
   props: {
-    kaestchenData: Object,
-    index: Number
+    kaestchenData: { type: Object, default: () => {} },
+    index: { type: Number, default: 0 },
+    selected: { type: Boolean, default: false }
   },
   data() {
     return {
-      auswahlArray: auswBuchArr
+      internalSelect: false
     };
+  },
+  watch: {
+    selected: function(newValue) {
+      this.internalSelect = newValue;
+    },
+    mounted() {
+      this.internalSelect = this.selected;
+    }
   }
 };
 </script>

@@ -31,24 +31,13 @@
 </template>
 
 <script>
-import pictograms from "@/pictograms.js";
+//import pictograms from "@/pictograms.js";
 import BuchstabenauswahlTabelle from "@/components/BuchstabenauswahlTabelle.vue";
 
 export default {
   name: "Home",
   components: {
     BuchstabenauswahlTabelle
-  },
-  data() {
-    return {
-      piktArray: pictograms,
-      auswBuchArr: []
-    };
-  },
-  mounted() {
-    for (let i = 0; i < pictograms.length; i++) {
-      this.auswBuchArr.push(false);
-    }
   }
 };
 </script>
