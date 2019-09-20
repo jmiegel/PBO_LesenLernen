@@ -1,6 +1,10 @@
 <template>
   <div class="task_wrapper">
-    <div v-for="(char, index) in wordsArr[0]" :key="index" class="char_wrapper">
+    <div
+      v-for="(char, index) in wordsArr[wIndex]"
+      :key="index"
+      class="char_wrapper"
+    >
       {{ char }}
     </div>
   </div>
@@ -13,8 +17,14 @@ export default {
   name: "Task",
   data() {
     return {
-      wordsArr: words
+      wordsArr: words,
+      wIndex: 0
     };
+  },
+  mounted() {
+    const min = 0;
+    const max = this.wordsArr.length;
+    this.wIndex = Math.floor(Math.random() * (max - min)) + min;
   }
 };
 </script>
@@ -28,10 +38,11 @@ export default {
 .char_wrapper {
   font-size: 10em;
   padding: 0.5em;
-  font-weight: normal;
+  font-weight: bold;
+  transition: color 0.5s ease;
 }
 
 .char_wrapper:hover {
-  font-weight: bold;
+  color: orange;
 }
 </style>
