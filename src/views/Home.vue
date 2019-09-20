@@ -32,7 +32,6 @@
 
 <script>
 import pictograms from "@/pictograms.js";
-import auswahlBuchstaben from "@/auswahlBuchstaben";
 import BuchstabenauswahlTabelle from "@/components/BuchstabenauswahlTabelle.vue";
 
 export default {
@@ -43,8 +42,13 @@ export default {
   data() {
     return {
       piktArray: pictograms,
-      auswBuchArr: auswahlBuchstaben
+      auswBuchArr: []
     };
+  },
+  mounted() {
+    for (let i = 0; i < pictograms.length; i++) {
+      this.auswBuchArr.push(false);
+    }
   }
 };
 </script>

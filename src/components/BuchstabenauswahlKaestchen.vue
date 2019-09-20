@@ -8,14 +8,15 @@
         {{ kaestchenData.upper }} {{ kaestchenData.lower }}
       </div>
       <div class="checkbox_wrapper">
-        <input v-model="auswBuchArr[index]" type="checkbox" />
+        <input v-model="auswahlArray[index]" type="checkbox" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import auswahlBuchstaben from "@/auswahlBuchstaben";
+//import auswahlBuchstaben from "@/auswahlBuchstaben";
+import auswBuchArr from "@/views/Home.vue";
 export default {
   name: "BuchstabenauswahlKaestchen",
   props: {
@@ -24,7 +25,7 @@ export default {
   },
   data() {
     return {
-      auswBuchArr: auswahlBuchstaben
+      auswahlArray: auswBuchArr
     };
   }
 };
