@@ -21,9 +21,9 @@
           </button>
         </div>
         <div class="start_button_wrapper">
-          <button>
+          <router-link to="/exercise" tag="button">
             <font-awesome-icon icon="play" size="4x" />
-          </button>
+          </router-link>
         </div>
       </div>
     </div>
