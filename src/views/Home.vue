@@ -1,22 +1,31 @@
 <template>
   <div class="home">
     <h1>Welche Buchstaben kannst du schon?</h1>
-    <div id="home_grid">
-      <BuchstabenauswahlTabelle />
-    </div>
-    {{ auswBuchArr }}
-    <div class="button_wrapper">
-      <button>
-        <font-awesome-icon icon="puzzle-piece" size="4x" />
-      </button>
 
-      <button>
-        <font-awesome-icon icon="user-cog" size="4x" />
-      </button>
-
-      <button>
-        <font-awesome-icon icon="play" size="4x" />
-      </button>
+    <!-- Div-Struktur für Startseite -->
+    <div class="content_wrapper">
+      <div class="row1_wrapper">
+        <div class="table_wrapper">
+          <BuchstabenauswahlTabelle />
+        </div>
+        <div class="puzzle_button_wrapper">
+          <button>
+            <font-awesome-icon icon="puzzle-piece" size="4x" />
+          </button>
+        </div>
+      </div>
+      <div class="row2_wrapper">
+        <div class="settings_button_wrapper">
+          <button>
+            <font-awesome-icon icon="user-cog" size="4x" />
+          </button>
+        </div>
+        <div class="start_button_wrapper">
+          <button>
+            <font-awesome-icon icon="play" size="4x" />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -72,5 +81,24 @@ export default {
 .button_wrapper {
   display: flex;
   flex-direction: row;
+}
+
+.content_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.row1_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.row2_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.table_wrapper {
+  padding: 2% 10%;
 }
 </style>
