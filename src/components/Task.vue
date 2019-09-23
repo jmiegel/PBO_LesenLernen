@@ -5,7 +5,8 @@
       :key="index"
       class="char_wrapper"
     >
-      <img :src="pictArr[anlautIndices[index]].img" />
+      <div v-if="showLetter[index]">{{ anlaut }}</div>
+      <img v-else :src="pictArr[anlautIndices[index]].img" />
     </div>
   </div>
 </template>
@@ -22,7 +23,8 @@ export default {
       wIndex: 0,
       auswBuchArr: [],
       pictArr: pictograms,
-      anlautIndices: []
+      anlautIndices: [],
+      showLetter: []
     };
   },
   mounted() {
@@ -42,6 +44,7 @@ export default {
       }
     }
 
+    // Indizes der Piktogramme ermitteln
     this.anlautIndices = [];
     for (let i = 0; i < this.wordsArr[this.wIndex].length; i++) {
       let anlaut = this.wordsArr[this.wIndex][i];
@@ -53,6 +56,14 @@ export default {
           this.anlautIndices.push(j);
         }
       }
+    }
+
+    // Ermitteln, ob ein Buchstabe oder ein Piktogramm angezeigt werden soll
+    this.showLetter = [];
+    for (let i = 0; i < this.anlautIndices.length; i++) {
+      let anlautIndex = this.anlautIndices[i];
+      if (auswahlFromStorage[anlautIndex] === true) this.showLetter.push(true);
+      else this.showLetter.push(false);
     }
   }
 };
