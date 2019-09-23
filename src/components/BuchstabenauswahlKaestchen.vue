@@ -1,5 +1,5 @@
 <template>
-  <div class="kaestchen_wrapper">
+  <div class="kaestchen_wrapper" @click="onClick">
     <div class="bild_wrapper">
       <img :src="kaestchenData.img" />
     </div>
@@ -37,6 +37,12 @@ export default {
         this.internalSelect = newValue;
       },
       immediate: true
+    }
+  },
+  methods: {
+    onClick() {
+      this.internalSelect = !this.internalSelect;
+      this.$emit("input", this.internalSelect, this.index);
     }
   }
 };
