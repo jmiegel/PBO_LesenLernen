@@ -1,6 +1,6 @@
 <template>
   <div>
-    <progress></progress>
+    <progress :value="progress" max="5"></progress>
     <Task :key="componentKey" />
     <button @click="nextTask">
       <font-awesome-icon icon="play" size="4x" />
@@ -18,12 +18,14 @@ export default {
   },
   data() {
     return {
-      componentKey: 0
+      componentKey: 0,
+      progress: 0
     };
   },
   methods: {
     nextTask() {
       this.componentKey += 1;
+      this.progress++;
     }
   }
 };
