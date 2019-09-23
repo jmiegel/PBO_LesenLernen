@@ -82,10 +82,15 @@ export default {
   padding-left: 0.5em;
   padding-right: 0.5em;
   font-weight: bold;
-  transition: color 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 .char_wrapper:hover {
-  color: orange;
+  transform: scale(1.2);
+}
+
+img {
+  border: 5px solid black;
+  border-radius: 4px;
 }
 </style>
