@@ -7,7 +7,8 @@
       :style="{ width: divWidth + 'vw' }"
     >
       <div class="transform_wrapper">
-        <div v-if="showLetter[index]">{{ anlaut }}</div>
+        <span v-if="showLetter[index]" class="letter_span">{{ anlaut }}</span>
+
         <div v-else class="bild_wrapper">
           <img :src="pictArr[anlautIndices[index]].img" />
         </div>
@@ -87,7 +88,7 @@ export default {
 }
 
 .char_wrapper {
-  font-size: 5vw;
+  font-size: 5rem;
   padding-left: 0.5em;
   padding-right: 0.5em;
   font-weight: bold;
@@ -109,5 +110,10 @@ export default {
 img {
   border: 5px solid black;
   border-radius: 4px;
+}
+
+.letter_span {
+  display: inline-block;
+  line-height: 0.8;
 }
 </style>
