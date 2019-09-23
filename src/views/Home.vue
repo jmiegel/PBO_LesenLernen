@@ -8,26 +8,22 @@
         <div class="table_wrapper">
           <BuchstabenauswahlTabelle />
         </div>
-        <div class="puzzle_button_wrapper">
-          <button id="puzzle_button" class="round_button">
-            <font-awesome-icon icon="puzzle-piece" size="6x" />
-          </button>
-        </div>
-      </div>
-      <div class="row2_wrapper">
-        <div class="settings_button_wrapper">
-          <button id="settings_button">Einstellungen</button>
-        </div>
-        <div class="start_button_wrapper">
+        <div class="button_wrapper">
           <router-link
             id="start_button"
             to="/exercise"
             tag="button"
             class="round_button"
           >
-            <font-awesome-icon icon="play" size="6x" />
+            <font-awesome-icon icon="play" size="8x" />
           </router-link>
+          <button id="puzzle_button" class="round_button">
+            <font-awesome-icon icon="puzzle-piece" size="6x" />
+          </button>
         </div>
+      </div>
+      <div class="row2_wrapper">
+        <button id="settings_button">Einstellungen</button>
       </div>
     </div>
   </div>
@@ -46,42 +42,10 @@ export default {
 </script>
 
 <style>
-.Normalbutton {
-  background-color: lightgray;
-  border: none;
-  padding: 1em;
-  font-size: 1.2em;
-  border-radius: 4px;
-}
-
-.Piktobutton {
-  border-radius: 4px;
-  padding: 0px;
-}
-
-#button_einstellungen {
-  grid-row: 2;
-  grid-column: 1;
-}
-
-#button_puzzle {
-  grid-row: 1;
-  grid-column: 3;
-}
-
-#button_start {
-  grid-row: 2;
-  grid-column: 3;
-}
-
-.button_wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
 .content_wrapper {
   display: flex;
   flex-direction: column;
+  padding: 2em;
 }
 
 .row1_wrapper {
@@ -92,24 +56,18 @@ export default {
 .row2_wrapper {
   display: flex;
   flex-direction: row;
+  padding-top: 4em;
 }
 
 .table_wrapper {
-  padding: 2% 10%;
+  padding: 2%;
   width: 80%;
 }
 
-.puzzle_button_wrapper {
-  width: 20%;
-  text-align: center;
-}
-
-.settings_button_wrapper {
-  width: 80%;
-  text-align: left;
-}
-
-.start_button_wrapper {
+.button_wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 20%;
   text-align: center;
 }
@@ -119,6 +77,10 @@ export default {
   padding: 1em;
   transition-duration: 0.5s;
   background-color: white;
+}
+
+#puzzle_button {
+  padding-top: 4em;
 }
 
 #start_button:hover {
