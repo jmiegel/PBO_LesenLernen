@@ -5,7 +5,7 @@
     <div v-else class="smiley_wrapper">
       <font-awesome-icon icon="smile-beam" size="9x" />
     </div>
-    <button @click="nextTask">
+    <button id="start_button" class="round_button" @click="nextTask">
       <font-awesome-icon icon="play" size="4x" />
     </button>
   </div>
