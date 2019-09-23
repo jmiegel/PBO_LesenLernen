@@ -6,8 +6,12 @@
       class="char_wrapper"
       :style="{ width: divWidth + 'vw' }"
     >
-      <div v-if="showLetter[index]">{{ anlaut }}</div>
-      <img v-else :src="pictArr[anlautIndices[index]].img" />
+      <div class="transform_wrapper">
+        <div v-if="showLetter[index]">{{ anlaut }}</div>
+        <div v-else class="bild_wrapper">
+          <img :src="pictArr[anlautIndices[index]].img" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -87,11 +91,19 @@ export default {
   padding-left: 0.5em;
   padding-right: 0.5em;
   font-weight: bold;
-  transition: transform 0.5s ease;
+  display: flex;
+  justify-content: center;
 }
 
-.char_wrapper:hover {
+.transform_wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.transform_wrapper:hover {
   transform: scale(1.2);
+  transition: transform 0.5s ease;
 }
 
 img {

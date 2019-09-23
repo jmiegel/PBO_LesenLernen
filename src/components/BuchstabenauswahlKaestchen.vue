@@ -67,4 +67,15 @@ export default {
 .checkbox_wrapper {
   width: 34%;
 }
+
+.bild_wrapper {
+  width: 100px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+}
+
+.bild_wrapper img {
+  vertical-align: middle;
+}
 </style>

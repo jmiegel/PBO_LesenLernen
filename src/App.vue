@@ -32,4 +32,21 @@
 .testClass {
   border: 1px solid black;
 }
+
+.bild_wrapper {
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 70px;
+  max-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.bild_wrapper img {
+  /*vertical-align: middle;*/
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
 </style>
