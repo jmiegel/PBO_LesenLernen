@@ -1,10 +1,11 @@
 <template>
   <div class="tabelle_wrapper">
-    <div v-for="(entry, i) in pictArray" :key="entry.name">
+    <div v-for="(entry, i) in pictArray" :key="entry.name" @click="onClick">
       <BuchstabenauswahlKaestchen
         :kaestchen-data="entry"
         :index="i"
         :selected="auswBuchArr[i]"
+        class="box"
         @input="onInput"
       />
     </div>
@@ -43,6 +44,9 @@ export default {
     onInput(newValue, j) {
       this.auswBuchArr.splice(j, 1, newValue);
       localStorage.setItem("auswahl", JSON.stringify(this.auswBuchArr));
+    },
+    onClick() {
+      //window.alert("Klick");
     }
   }
 };
@@ -53,5 +57,16 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.box {
+  border: 4px solid black;
+  border-radius: 10%;
+  margin: 0.5em;
+  transition-duration: 0.5s;
+}
+
+.box:hover {
+  border: 4px solid orange;
 }
 </style>
