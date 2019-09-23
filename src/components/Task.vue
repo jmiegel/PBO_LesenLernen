@@ -1,9 +1,10 @@
 <template>
-  <div class="task_wrapper">
+  <div id="task_wrapper" class="task_wrapper">
     <div
       v-for="(anlaut, index) in wordsArr[wIndex]"
       :key="index"
       class="char_wrapper"
+      :style="{ width: divWidth + 'vw' }"
     >
       <div v-if="showLetter[index]">{{ anlaut }}</div>
       <img v-else :src="pictArr[anlautIndices[index]].img" />
@@ -24,7 +25,8 @@ export default {
       auswBuchArr: [],
       pictArr: pictograms,
       anlautIndices: [],
-      showLetter: []
+      showLetter: [],
+      divWidth: 0
     };
   },
   mounted() {
@@ -65,6 +67,9 @@ export default {
       if (auswahlFromStorage[anlautIndex] === true) this.showLetter.push(true);
       else this.showLetter.push(false);
     }
+
+    // Die Breite der Divs in % ermitteln
+    this.divWidth = 100 / this.wordsArr[this.wIndex].length;
   }
 };
 </script>
@@ -73,12 +78,12 @@ export default {
 .task_wrapper {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   padding-top: 5em;
+  padding-bottom: 7em;
 }
 
 .char_wrapper {
-  font-size: 10em;
+  font-size: 5vw;
   padding-left: 0.5em;
   padding-right: 0.5em;
   font-weight: bold;
