@@ -1,7 +1,10 @@
 <template>
   <div>
-    <progress :value="progress" max="5"></progress>
-    <Task :key="componentKey" />
+    <progress :value="progress" :max="maxTasks"></progress>
+    <Task v-if="progress < maxTasks" :key="componentKey" />
+    <div v-else class="smiley_wrapper">
+      <font-awesome-icon icon="smile-beam" size="9x" />
+    </div>
     <button @click="nextTask">
       <font-awesome-icon icon="play" size="4x" />
     </button>
@@ -19,13 +22,16 @@ export default {
   data() {
     return {
       componentKey: 0,
-      progress: 0
+      progress: 0,
+      maxTasks: 5
     };
   },
   methods: {
     nextTask() {
       this.componentKey += 1;
       this.progress++;
+
+      if (this.progress > this.maxTasks) window.location.href = "/";
     }
   }
 };
@@ -36,5 +42,10 @@ progress {
   border-radius: 4px;
   width: 60%;
   height: 50%;
+}
+
+.smiley_wrapper {
+  padding: 2em;
+  color: orange;
 }
 </style>
