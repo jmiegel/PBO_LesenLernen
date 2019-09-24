@@ -20,7 +20,7 @@
 <script>
 import words from "@/words.js";
 import pictograms from "@/pictograms.js";
-
+import { loadAuswahlFromStorage } from "@/localStorage.js";
 export default {
   name: "Task",
   data() {
@@ -39,7 +39,8 @@ export default {
     const max = this.wordsArr.length;
     this.wIndex = Math.floor(Math.random() * (max - min)) + min;
 
-    const auswahlFromStorage = JSON.parse(localStorage.getItem("auswahl"));
+    loadAuswahlFromStorage(this.auswBuchArr);
+    /*JSON.parse(localStorage.getItem("auswahl"));
 
     if (auswahlFromStorage === null) {
       for (let i = 0; i < pictograms.length; i++) {
@@ -49,7 +50,7 @@ export default {
       for (let i = 0; i < auswahlFromStorage.length; i++) {
         this.auswBuchArr.splice(i, 1, auswahlFromStorage[i]);
       }
-    }
+    }*/
 
     // Indizes der Piktogramme ermitteln
     this.anlautIndices = [];
@@ -69,7 +70,7 @@ export default {
     this.showLetter = [];
     for (let i = 0; i < this.anlautIndices.length; i++) {
       let anlautIndex = this.anlautIndices[i];
-      if (auswahlFromStorage[anlautIndex] === true) this.showLetter.push(true);
+      if (this.auswBuchArr[anlautIndex] === true) this.showLetter.push(true);
       else this.showLetter.push(false);
     }
 
