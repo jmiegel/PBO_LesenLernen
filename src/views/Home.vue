@@ -92,6 +92,7 @@ export default {
 }
 
 #settings_button {
+  font-family: "Be Vietnam", Helvetica, Arial, Geneva, sans-serif;
   font-size: 2em;
   color: rgb(54, 51, 51);
   border-radius: 10px;

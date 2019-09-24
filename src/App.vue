@@ -1,14 +1,11 @@
 <template>
   <div id="app">
     <router-view />
-    <link
-      href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap"
-      rel="stylesheet"
-    />
   </div>
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap");
 #app {
   font-family: "Be Vietnam", Helvetica, Arial, Geneva, sans-serif;
   -webkit-font-smoothing: antialiased;
