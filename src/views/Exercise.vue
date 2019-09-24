@@ -31,7 +31,7 @@ export default {
       this.componentKey += 1;
       this.progress++;
 
-      if (this.progress > this.maxTasks) window.location.href = "/";
+      if (this.progress > this.maxTasks) this.$router.push("/");
     }
   }
 };
