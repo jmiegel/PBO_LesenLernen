@@ -6,6 +6,7 @@
         :index="i"
         :selected="auswBuchArr[i]"
         class="box"
+        :style="{ borderColor: colorArr[i] }"
         @input="onInput"
       />
     </div>
@@ -24,7 +25,8 @@ export default {
   data() {
     return {
       pictArray: pictograms,
-      auswBuchArr: []
+      auswBuchArr: [],
+      colorArr: []
     };
   },
   mounted() {
@@ -39,11 +41,22 @@ export default {
         this.auswBuchArr.splice(i, 1, auswahlFromStorage[i]);
       }
     }
+
+    this.changeColors();
   },
   methods: {
     onInput(newValue, j) {
       this.auswBuchArr.splice(j, 1, newValue);
       localStorage.setItem("auswahl", JSON.stringify(this.auswBuchArr));
+
+      this.changeColors();
+    },
+    changeColors() {
+      this.colorArr = [];
+      for (let i = 0; i < this.auswBuchArr.length; i++) {
+        if (this.auswBuchArr[i] === true) this.colorArr.splice(i, 1, "orange");
+        else this.colorArr.splice(i, 1, "black");
+      }
     }
   }
 };
@@ -57,13 +70,14 @@ export default {
 }
 
 .box {
-  border: 4px solid black;
+  border-width: 4px;
+  border-style: solid;
   border-radius: 10%;
   margin: 0.5em;
   transition-duration: 0.5s;
 }
 
 .box:hover {
-  border: 4px solid orange;
+  border-color: orange;
 }
 </style>
