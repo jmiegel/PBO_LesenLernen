@@ -40,17 +40,6 @@ export default {
     this.wIndex = Math.floor(Math.random() * (max - min)) + min;
 
     loadAuswahlFromStorage(this.auswBuchArr);
-    /*JSON.parse(localStorage.getItem("auswahl"));
-
-    if (auswahlFromStorage === null) {
-      for (let i = 0; i < pictograms.length; i++) {
-        this.auswBuchArr.push(false);
-      }
-    } else {
-      for (let i = 0; i < auswahlFromStorage.length; i++) {
-        this.auswBuchArr.splice(i, 1, auswahlFromStorage[i]);
-      }
-    }*/
 
     // Indizes der Piktogramme ermitteln
     this.anlautIndices = [];

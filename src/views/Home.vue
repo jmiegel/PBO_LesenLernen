@@ -30,7 +30,6 @@
 </template>
 
 <script>
-//import pictograms from "@/pictograms.js";
 import BuchstabenauswahlTabelle from "@/components/BuchstabenauswahlTabelle.vue";
 
 export default {

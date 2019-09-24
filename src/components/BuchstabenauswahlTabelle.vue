@@ -16,6 +16,7 @@
 <script>
 import pictograms from "@/pictograms.js";
 import BuchstabenauswahlKaestchen from "@/components/BuchstabenauswahlKaestchen";
+import { loadAuswahlFromStorage } from "@/localStorage.js";
 
 export default {
   name: "BuchstabenauswahlTabelle",
@@ -30,17 +31,7 @@ export default {
     };
   },
   mounted() {
-    const auswahlFromStorage = JSON.parse(localStorage.getItem("auswahl"));
-
-    if (auswahlFromStorage === null) {
-      for (let i = 0; i < pictograms.length; i++) {
-        this.auswBuchArr.push(false);
-      }
-    } else {
-      for (let i = 0; i < auswahlFromStorage.length; i++) {
-        this.auswBuchArr.splice(i, 1, auswahlFromStorage[i]);
-      }
-    }
+    loadAuswahlFromStorage(this.auswBuchArr);
 
     this.changeColors();
   },
