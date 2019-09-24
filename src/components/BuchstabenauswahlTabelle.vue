@@ -76,8 +76,4 @@ export default {
   margin: 0.5em;
   transition-duration: 0.5s;
 }
-
-.box:hover {
-  border-color: orange;
-}
 </style>
